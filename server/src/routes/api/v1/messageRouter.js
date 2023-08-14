@@ -1,5 +1,4 @@
 import express from "express"
-import uploadImage from "../../../services/uploadImage.js";
 import { Message } from "../../../models/index.js"
 
 const messageRouter = new express.Router()
