@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 const MessageList = (props) => {
+    console.log(props)
     const [messageList, setMessageList] = useState([])
     const getMessages = async () => {
         try {
@@ -25,19 +26,19 @@ const MessageList = (props) => {
         return (
             <div key={message.id}>
                 id={message.id}
-                userId={message.userId}
                 content={message.content}
                 image={message.image}
+                userId={message.userId}
             </div>
         )
     })
     return (
         <div>
-            <h1>Welcome to Leland Stanford Community MessageBoard</h1>
+            <h2>Welcome to Leland Stanford Community MessageBoard</h2>
             <div>
-                <Link to ="/new-message" className="button">
-                    <h3>Add New Message</h3>
-                </Link>
+                <div className="button">
+                    <h5>Add New Message</h5>
+                </div>
             </div>
             <div className="container">
                 <div>{messagesToRender}</div>
