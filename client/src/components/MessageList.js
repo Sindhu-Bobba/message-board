@@ -24,11 +24,11 @@ const MessageList = (props) => {
 
     const messagesToRender = messageList.map((message) => {
         return (
-            <div key={message.id}>
-                id={message.id}
-                content={message.content}
-                image={message.image}
-                userId={message.userId}
+            <div key={message.id}> 
+                {message.id}
+                <p>content={message.content}</p>
+                <p>{message.image}</p>
+                <p>userId={message.userId}</p>
             </div>
         )
     })
@@ -36,12 +36,12 @@ const MessageList = (props) => {
         <div>
             <h2>Welcome to Leland Stanford Community MessageBoard</h2>
             <div>
-                <div className="button">
+                <Link to ="/new-message" className="button">
                     <h5>Add New Message</h5>
-                </div>
+                </Link>
             </div>
             <div className="container">
-                <div>{messagesToRender}</div>
+                {messagesToRender}
             </div>
         </div>
     )
