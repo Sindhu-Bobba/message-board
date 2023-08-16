@@ -15,5 +15,18 @@ class Message extends Model {
             },
         }
     }
+    static get relationMappings() {
+        const { User } = require("./index.js")
+        return {
+          users: {
+            relation : Model.BelongsToOneRelation,
+            modelClass:User,
+            join: {
+              from: "messages.userId",
+              to: "users.id"
+            }
+          }
+        }
+      }
 }
 module.exports = Message
