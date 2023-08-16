@@ -9,6 +9,8 @@ import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import MessageList from "./MessageList.js"
 import MessageShow from "./MessageShow";
+import MessageForm from "./MessageForm";
+import AuthenticatedRoute from "./authentication/AuthenticatedRoute.js"
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -31,6 +33,7 @@ const App = (props) => {
       <Switch>
         <Route exact path="/" component={MessageList}/>
         <Route exact path="/messages/:id" component={MessageShow}/>
+        <AuthenticatedRoute exact path="/new-message" component={MessageForm} user={currentUser}/>
 {/* 
           <h2>Hello from react</h2> */}
         <Route exact path="/users/new" component={RegistrationForm} />

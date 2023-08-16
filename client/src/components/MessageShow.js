@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 
 const MessageShow = (props) => {
-    console.log(props)
     const [message, setMessage] = useState({
         content: "",
         image: "",

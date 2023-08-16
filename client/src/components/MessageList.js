@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import MessageTile from "./MessageTile"
+
 
 const MessageList = (props) => {
-    console.log(props)
     const [messageList, setMessageList] = useState([])
     const getMessages = async () => {
         try {
@@ -24,19 +25,19 @@ const MessageList = (props) => {
 
     const messagesToRender = messageList.map((message) => {
         return (
-            <div key={message.id}> 
-                {message.id}
-                <p>content={message.content}</p>
-                <p>{message.image}</p>
-                <p>userId={message.userId}</p>
-            </div>
+            <MessageTile
+                key={message.id}
+                id={message.id}
+                content={message.content}
+                image={message.image}
+            />
         )
     })
     return (
         <div>
             <h2>Welcome to Leland Stanford Community MessageBoard</h2>
             <div>
-                <Link to ="/new-message" className="button">
+                <Link to="/new-message" className="button">
                     <h5>Add New Message</h5>
                 </Link>
             </div>
